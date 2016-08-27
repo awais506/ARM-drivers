@@ -70,9 +70,6 @@ int main(void){
     // g) VT signal goes high
     // h) wait 250ms
     // i) VT signal goes low
-		
-		
-	
 	
 		SetReady();
 		WaitForASLow();
@@ -83,11 +80,6 @@ int main(void){
 		SetVT();
 		Delay1ms(250);
 		ClearVT();
-		
-		
-		
-		
-		
   }
 }
 // Subroutine to initialize port F pins for input and output
