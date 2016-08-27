@@ -1,3 +1,6 @@
+
+//Main purpose of this program is to use GPIO's
+
 // 0.Documentation Section 
 // Lab7_HeartBlock, main.c
 
@@ -20,8 +23,7 @@
 
 // Date: January 15, 2016
 
-// 1. Pre-processor Directives Section
-#include "TExaS.h"
+
 
 // Constant declarations to access port registers using 
 // symbolic names instead of addresses
@@ -45,7 +47,6 @@
 //   Function Prototypes
 void PortF_Init(void);
 void Delay1ms(unsigned long msec);
-void EnableInterrupts(void);  // Enable interrupts
 void WaitForASLow(void);
 void WaitForASHigh(void);
 void SetVT(void);
@@ -56,9 +57,9 @@ void ClearReady(void);
 // 3. Subroutines Section
 // MAIN: Mandatory for a C Program to be executable
 int main(void){
-  TExaS_Init(SW_PIN_PF40, LED_PIN_PF31,ScopeOn);  // activate grader and set system clock to 80 MHz
+  
   PortF_Init();                            // Init port PF4 PF3 PF1    
-  EnableInterrupts();                      // enable interrupts for the grader  
+    
   while(1){          // Follows the nine steps list above
     // a) Ready signal goes high
     // b) wait for switch to be pressed
@@ -182,7 +183,7 @@ void ClearReady(void){
 // Subroutine to delay in units of milliseconds
 // Inputs:  Number of milliseconds to delay
 // Outputs: None
-// Notes:   assumes 80 MHz clock
+// Notes:   assumes 80 MHz clock, It uses fact thata every instrcution takes a specific time (available in datasheet)
 void Delay1ms(unsigned long msec){
 // write this function
 	unsigned long i;
