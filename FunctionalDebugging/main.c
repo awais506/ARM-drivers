@@ -1,15 +1,11 @@
 // ***** 0. Documentation Section *****
-// main.c for Lab 9
+// main.c 
 // Runs on LM4F120/TM4C123
-// In this lab we are learning functional debugging by dumping
+//  functional debugging by dumping
 //   recorded I/O data into a buffer
-// January 15, 2016
-
-// Lab 9
-//      Jon Valvano and Ramesh Yerraballi
+// Muhammad Awais
 
 // ***** 1. Pre-processor Directives Section *****
-#include "TExaS.h"
 #include "tm4c123gh6pm.h"
 
 //Bit Specfic adressing
@@ -17,29 +13,26 @@
 #define PF1_LED                     (*((volatile unsigned long *)0x40025008))
 #define PF0_SW                     (*((volatile unsigned long *)0x40025004))
 
-// ***** 2. Global Declarations Section *****
 
-// FUNCTION PROTOTYPES: Each subroutine defined
-void DisableInterrupts(void); // Disable interrupts
-void EnableInterrupts(void);  // Enable interrupts
+
+
 
 // ***** 3. Subroutines Section *****
 
 
 
 /* 
-This Lab9 starter project is the same as C9_Debugging example but 
-includes the connections to the Lab9 grader. You will make three changes. 
-First, make the LED flash at 10 Hz. In other words, make it turn on for 0.05 seconds, 
+ 
+ the LED flash at 10 Hz. In other words, make it turn on for 0.05 seconds, 
 and then turn off for 0.05 seconds. 
-Second, make the LED flash if either switch SW1 or SW2 is pressed 
+ LED flash if either switch SW1 or SW2 is pressed 
 (this means flash the LED if either PF4 or PF0 is 0). 
-Third, record PortF bits 4,1,0 every time the input changes or the output changes. 
+ record PortF bits 4,1,0 every time the input changes or the output changes. 
 For example, if your system detects a change in either PF4 or PF0 input, 
 record PortF bits 4,1,0. If your system causes a change in PF1, record PortF bits 4,1,0. 
 
 If both PF4 and PF0 switch are not pressed, the PF1 output should be low.  
-If either PF4 or PF0 switches is pressed, the output toggles at 10 Hz (±10%). 
+If either PF4 or PF0 switches is pressed, the output toggles at 10 Hz (Â±10%). 
 Information collected in the Data array matches the I/O on PortF.
 50 data points are collected only on a change in input or a change in output.
 This means no adjacent elements in the array should be equal.
