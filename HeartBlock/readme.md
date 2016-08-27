@@ -1,6 +1,6 @@
 
 Heart Block 
-Mock simulation of heart
+Mock simulation of heart\n
 Purpose of this program is to learn GPIO
 Following is how it works
    a) Make the Ready signal go high
