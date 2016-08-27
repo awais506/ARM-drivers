@@ -1,7 +1,9 @@
 
 Heart Block 
-Mock simulation of heart\n
+Mock simulation of heart
+
 Purpose of this program is to learn GPIO
+
 Following is how it works
    a) Make the Ready signal go high
     b) Wait for AS to be 0, switch to be pressed
