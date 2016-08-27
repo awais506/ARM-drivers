@@ -1,15 +1,14 @@
 // ***** 0. Documentation Section *****
-// SwitchLEDInterface.c for Lab 8
+// SwitchLEDInterface.c 
 // Runs on LM4F120/TM4C123
 // Use simple programming structures in C to toggle an LED
 // while a button is pressed and turn the LED on when the
 // button is released.  This lab requires external hardware
 // to be wired to the LaunchPad using the prototyping board.
-// January 15, 2016
-//      Jon Valvano and Ramesh Yerraballi
+//Muhammad Awas awais12506
 
 // ***** 1. Pre-processor Directives Section *****
-#include "TExaS.h"
+
 #include "tm4c123gh6pm.h"
 
 //Bit specfic adressing for PE0 and PE1 
@@ -19,8 +18,7 @@
 // ***** 2. Global Declarations Section *****
 
 // FUNCTION PROTOTYPES: Each subroutine defined
-void DisableInterrupts(void); // Disable interrupts
-void EnableInterrupts(void);  // Enable interrupts
+
 void lab8Init(void);
 void Delay1ms(unsigned long msec);
 // ***** 3. Subroutines Section *****
@@ -34,9 +32,7 @@ int main(void){
 //**********************************************************************
 // The following version tests input on PE0 and output on PE1
 //**********************************************************************
-  TExaS_Init(SW_PIN_PE0, LED_PIN_PE1, ScopeOn);  // activate grader and set system clock to 80 MHz
-
-	
+ 
   EnableInterrupts();           // enable interrupts for the grader
 	lab8Init();
 	LED_PE1=0x02;
@@ -45,15 +41,13 @@ int main(void){
     
 		if(SW_PE0==0x01)
 		{
-		LED_PE1^=0x02;
+		        LED_PE1^=0x02;
 			Delay1ms(100);
-
 		}
 		else
 			LED_PE1=0x02;
 		
   }
-  
 }
 
 
